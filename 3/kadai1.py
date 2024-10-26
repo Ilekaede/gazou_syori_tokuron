@@ -13,5 +13,5 @@ def plot_histogram(img:np.ndarray, title:str):
     plt.ylabel("Frequency")
 
 plot_histogram(input_img, "Histgram of value frequency")
-plt.savefig("./img/output_histogram_flatten.jpg", format='jpg')
+plt.savefig("./img/hist.jpg", format='jpg')
 plt.show()
