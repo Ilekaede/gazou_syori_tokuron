@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-def move_img(img: np.ndarray, shift_x: int = 1, shift_y: int = 0, iterations: int = 100) -> np.ndarray:
+def shift_img(img: np.ndarray, shift_x: int = 1, shift_y: int = 0, iterations: int = 100) -> np.ndarray:
 
     kernel = np.zeros((3, 3), dtype = np.float32)
     kernel[1 - shift_y, 1 - shift_x] = 1
@@ -26,9 +26,15 @@ path = '../img/lenna.bmp'
 img = cv2.imread(path)
 # cv2.imwrite('./lenna.jpg', img)
 
-result = move_img(img, shift_x = -1, shift_y = -1, iterations = 100)
-cv2.imshow('Shifted Image', result)
+result1 = shift_img(img, shift_x = -1, shift_y = -1, iterations = 100)
+result2 = shift_img(img, shift_x = 1, shift_y = 0, iterations = 100)
+
+result12 = np.hstack((result1, result2))
+
+cv2.imshow('Shifted Image', result12)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-# cv2.imwrite('./moving.jpg', result)
+cv2.imwrite('./moving.jpg', result1)
+cv2.imwrite('./moving2.jpg', result2)
+
 
