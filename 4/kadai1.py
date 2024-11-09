@@ -19,6 +19,6 @@ cv2.imshow('Edge Image', edge_color_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-cv2.imwrite('./laplacian.jpg', edge_color_img)
+# cv2.imwrite('./laplacian.jpg', edge_color_img)
 
 
