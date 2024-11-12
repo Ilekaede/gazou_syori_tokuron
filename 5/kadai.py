@@ -17,7 +17,6 @@ def kmeans_clustering(img: np.ndarray, k: int) -> np.ndarray:
     
     return clustered_img
 
-
 path = '../img/lenna.bmp'
 img = cv2.imread(path)
 clustered_img = kmeans_clustering(img, k=5)
